@@ -1,8 +1,26 @@
-# Portfolio (Pranjal Manhgaye)
+# Pranjal Manhgaye Portfolio
 
-Freelance/client-first portfolio built with **Next.js** + **Tailwind CSS v4**.
+Freelance backend portfolio built with Next.js 16, TypeScript, and Tailwind CSS v4.
 
-## Run locally
+## Live Demo
+
+- Website: [https://port-folio-one-dusky.vercel.app/](https://port-folio-one-dusky.vercel.app/)
+
+## Highlights
+
+- Freelance-focused structure: services, proof of work, skills, delivery process, and contact flow
+- Theme system with a click-toggle British light mode and heritage dark mode
+- Reusable component-first architecture under `src/components`
+- Content-driven sections using typed data files under `src/data`
+
+## Tech Stack
+
+- Next.js 16 (App Router)
+- React 19 + TypeScript
+- Tailwind CSS v4
+- FormSubmit for contact form delivery
+
+## Local Development
 
 ```bash
 npm install
@@ -11,21 +29,39 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Customize
-
-- **Profile copy & hero photo**: `src/data/profile.ts` — set `profileImageSrc` to a path under `public/` (e.g. `/profile.png`). Replace `public/profile.png` with your own image.
-- **Services**: `src/data/services.ts`
-- **Projects**: `src/data/projects.ts`
-- **Skills**: `src/data/skills.ts`
-- **Contact email**: set `NEXT_PUBLIC_CONTACT_EMAIL` in `.env.local` (see `.env.example`). The form uses [FormSubmit](https://formsubmit.co) to deliver messages to your inbox without a backend.
-
-## Build
+## Production Build
 
 ```bash
 npm run build
 npm start
 ```
 
+## Project Structure
+
+- `src/app/`: app shell, routing, global styles
+- `src/components/`: UI sections and reusable components
+- `src/data/`: profile, services, projects, skills, process, contact content
+- `public/`: static assets (including profile image)
+
+## Customization Guide
+
+- Profile details and hero content: `src/data/profile.ts`
+- Services section: `src/data/services.ts`
+- Projects section: `src/data/projects.ts`
+- Skills section: `src/data/skills.ts`
+- Delivery process section: `src/data/process.ts`
+- Contact details: `src/data/contact.ts`
+- Theme and design tokens: `src/app/globals.css`
+
+## Environment Variables
+
+Create `.env.local` from `.env.example` and set:
+
+- `NEXT_PUBLIC_CONTACT_EMAIL`: inbox for portfolio inquiries
+
+The contact form posts through [FormSubmit](https://formsubmit.co), so no custom backend is required.
+
 ## Notes
 
-- **Typography**: display/body fonts load via `next/font` (Google) in `src/app/layout.tsx`. CI needs network for the first font fetch during build, or use cached fonts.
+- Fonts are loaded via `next/font` in `src/app/layout.tsx`.
+- For CI/build environments, internet access may be needed on first font fetch.
