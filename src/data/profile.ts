@@ -3,6 +3,14 @@ export type PortfolioProfile = {
   handle: string;
   githubUrl: string;
   headline: string;
+  /** One memorable line under the name (hero). */
+  heroValueLine: string;
+  /** Short kicker above the name, e.g. role. */
+  heroRole: string;
+  /** Compact strip under CTAs: e.g. Open source · Backend · APIs */
+  credibilityStrip: string[];
+  /** Path under /public for hero photo (e.g. "/profile.png"). */
+  profileImageSrc?: string;
   location: string;
   focusAreas: string[];
   aboutParagraphs: string[];
@@ -20,9 +28,14 @@ export const profile: PortfolioProfile = {
   handle: "PranjalManhgaye",
   githubUrl: "https://github.com/PranjalManhgaye",
   headline: "Freelance backend engineer focused on reliable systems",
+  heroRole: "Freelance backend",
+  heroValueLine:
+    "Shipping reliable APIs, auth, and clean architecture you can iterate on.",
+  credibilityStrip: ["Open source", "REST & Node.js", "C++ & DSA"],
+  profileImageSrc: "/profile.png",
   location: "Gwalior, India",
   focusAreas: [
-    "DSA-backed problem solving",
+    "DSA-based problem solving",
     "Backend systems & clean architecture",
     "Authentication / authorization patterns",
     "C++ depth for algorithms and performance",
